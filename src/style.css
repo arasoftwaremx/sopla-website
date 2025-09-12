@@ -1,1 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+:root {
+  --yellow-sopla: #E9D460;
+  --green-sopla: #5DCB6B;
+}
+
+.text-yellow-sopla {
+  color: var(--yellow-sopla);
+}
+
+.text-green-sopla {
+  color: var(--green-sopla);
+}
