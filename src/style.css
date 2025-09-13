@@ -4,6 +4,7 @@
 :root {
   --yellow-sopla: #E9D460;
   --green-sopla: #5DCB6B;
+  --yellow-shadow-sopla: #F1E696;
 }
 
 .bg-yellow-sopla {
@@ -16,4 +17,8 @@
 
 .text-green-sopla {
   color: var(--green-sopla);
+}
+
+.yellow-shadow-card {
+  box-shadow: 0px 10px 15px -3px var(--yellow-shadow-sopla);
 }
