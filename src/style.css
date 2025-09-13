@@ -6,6 +6,10 @@
   --green-sopla: #5DCB6B;
 }
 
+.bg-yellow-sopla {
+  background-color: var(--yellow-sopla);
+}
+
 .text-yellow-sopla {
   color: var(--yellow-sopla);
 }
