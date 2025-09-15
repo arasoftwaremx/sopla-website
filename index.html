@@ -91,7 +91,7 @@
                     </li>
                 </ul>
                 <div class="mt-6">
-                    <a class="text-white bg-green-sopla p-3 rounded-full font-semibold block text-center" href="#">
+                    <a class="text-white bg-green-sopla p-3 rounded-full font-semibold block text-center" href="#contacto">
                         CONTACTO
                     </a>
                 </div>
@@ -132,8 +132,8 @@
         </div>
     </div>
 
-    <!-- Our Services Section-->
-    <section id="services" class="p-7 sm:p-8 lg:p-15">
+    <!-- Our servicios Section-->
+    <section id="servicios" class="p-7 sm:p-8 lg:p-15">
         <div>
             <h3 class="text-xl text-yellow-sopla">Fumigación Profesional</h3>
 
@@ -142,11 +142,11 @@
             <div class="w-[125px] h-[5px] bg-yellow-sopla mt-5"></div>
 
             <!-- Video Container -->
-            <div class="mt-10">
-                <video class="rounded-2xl" src="./src/videos/SOPLA GENERAL 1.mp4" autoplay loop muted playsinline>
-                    <img src="./src/images/poster.png" alt="Video no soportado">
-                    Su navegador no soporta contenido multimedia.
-                </video>
+            <div class="w-full max-w-xs aspect-[9/16] mt-10 flex justify-center mx-auto">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/DzbVDsuRgjE" title="YouTube Shorts"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
 
@@ -155,7 +155,7 @@
             <div class="mt-5 sm:mt-8 lg:mt-0 md:flex-1">
                 <div
                     class="relative m-0 p-0 yellow-shadow-card rounded-2xl hover:scale-102 transition-transform duration-300">
-                    <img src="./src/images/desinfeccion.png" alt="imagen_sopla_1" class="rounded-2xl">
+                    <img src="./src/images/desinfeccion.png" alt="imagen_sopla_1" class="rounded-2xl" />
 
                     <div
                         class="bg-white absolute bottom-4 end-4 w-12 h-12 sm:h-20 sm:w-20 md:bottom-7 md:end-7 flex items-center justify-center rounded-full text-green-sopla text-xl shadow-lg">
@@ -173,7 +173,7 @@
             <div class="mt-5 sm:mt-8 lg:mt-0 md:flex-1">
                 <div
                     class="relative m-0 p-0 yellow-shadow-card rounded-2xl hover:scale-102 transition-transform duration-300">
-                    <img src="./src/images/control_plaga.png" alt="imagen_sopla_2" class="rounded-2xl">
+                    <img src="./src/images/control_plaga.png" alt="imagen_sopla_2" class="rounded-2xl" />
 
                     <div
                         class="bg-white absolute bottom-4 end-4 w-12 h-12 sm:h-20 sm:w-20 md:bottom-7 md:end-7 flex items-center justify-center rounded-full text-green-sopla text-xl shadow-lg">
@@ -183,8 +183,120 @@
 
                 <h2 class="text-green-sopla font-bold mt-4 lg:mt-10 text-2xl">Control de Roedores</h2>
 
-                <p class="mt-2 sm:mt-3 md:mt-4 lg:mt-5">Controlamos roedores y plagas dañinas garantizando espacios
-                    libres de infestaciones.</p>
+                <p class="mt-2 sm:mt-3 md:mt-4 lg:mt-5">
+                    Controlamos roedores y plagas dañinas garantizando espacios libres
+                    de infestaciones.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="min-h-screen">
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+            <!-- Left-->
+            <div class="bg-white p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
+                <h1
+                    class="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-600 mb-10 text-center border-b-2 border-input-sopla pb-4">
+                    Contáctanos
+                </h1>
+
+                <form class="space-y-6 max-w-xl mx-auto w-full">
+                    <div>
+                        <input type="text" placeholder="Nombre completo"
+                            class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                            required />
+                    </div>
+
+                    <div>
+                        <input type="email" placeholder="Correo electrónico"
+                            class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                            required />
+                    </div>
+
+                    <div>
+                        <input type="tel" placeholder="Teléfono"
+                            class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                            required />
+                    </div>
+
+                    <div>
+                        <input type="text" placeholder="Dirección"
+                            class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                            required />
+                    </div>
+
+                    <div>
+                        <textarea placeholder="Cuéntanos tu problema..." rows="4"
+                            class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla resize-none"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Enviar
+                    </button>
+                </form>
+
+                <div class="mt-12 max-w-xl mx-auto w-full">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-bold text-green-600 mb-6">Horarios</h2>
+
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center pr-4 border-b-1 border-dotted pb-3">
+                                    <span class="font-semibold text-gray-700">Lunes a Viernes</span>
+                                    <span class="text-gray-600">9:00 AM - 5:00 PM</span>
+                                </div>
+
+                                <div class="flex justify-between items-center pr-4 border-b-1 border-dotted pb-3">
+                                    <span class="font-semibold text-gray-700">Sábados</span>
+                                    <span class="text-gray-600">9:00 AM - 2:00 PM</span>
+                                </div>
+
+                                <div class="flex justify-between items-center pr-4 border-b-1 border-dotted pb-3">
+                                    <span class="font-semibold text-gray-700">Domingos</span>
+                                    <span class="text-gray-600">Cerrado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4 ml-8">
+                            <a href="#"
+                                class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                <i class="fab fa-whatsapp text-3xl"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@solucionesenplagas"
+                                class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                <i class="fab fa-tiktok text-3xl"></i>
+                            </a>
+                            <a href="#"
+                                class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook text-3xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/sopla_2/"
+                                class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                <i class="fab fa-instagram text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div
+                class="relative min-h-[400px] lg:min-h-full bg-[url('/src/images/sopla_contacto.jpg')] bg-cover bg-center">
+                <div class="absolute inset-0 bg-black opacity-20"></div>
+
+                <div
+                    class="relative h-full flex flex-col justify-center p-8 sm:p-12 lg:p-16 xl:p-20 text-white text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                        Háblanos de tu<br />situación
+                    </h2>
+                    <p class="text-lg sm:text-xl lg:text-2xl font-light">
+                        Programa tu tratamiento<br />personalizado
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -194,10 +306,10 @@
             <div class="p-5 flex flex-col justify-between h-full">
                 <ul
                     class="flex flex-row justify-center lg:justify-normal gap-4 sm:gap-20 lg:gap-10 text-yellow-sopla font-bold text-lg">
-                    <li class="cursor-pointer"><a href="#home">Inicio</a></li>
-                    <li class="cursor-pointer"><a href="#us">Nosotros</a></li>
-                    <li class="cursor-pointer"><a href="#services">Servicios</a></li>
-                    <li class="cursor-pointer"><a href="#contact">Contacto</a></li>
+                    <li class="cursor-pointer"><a href="/">Inicio</a></li>
+                    <li class="cursor-pointer"><a href="#servicios">Servicios</a></li>
+                    <li class="cursor-pointer"><a href="#control_plagas">Control</a></li>
+                    <li class="cursor-pointer"><a href="#contacto">Contacto</a></li>
                 </ul>
 
                 <div class="my-5 m-0 lg:me-20">
