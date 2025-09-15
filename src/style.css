@@ -11,6 +11,10 @@
   background-color: var(--yellow-sopla);
 }
 
+.bg-green-sopla {
+  background: var(--green-sopla);
+}
+
 .text-yellow-sopla {
   color: var(--yellow-sopla);
 }
