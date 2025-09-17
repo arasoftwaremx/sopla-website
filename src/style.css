@@ -5,6 +5,8 @@
   --yellow-sopla: #E9D460;
   --green-sopla: #5DCB6B;
   --yellow-shadow-sopla: #F1E696;
+  --input-sopla: #F1E69633;
+  --input-placeholder-sopla: #F1E69680;
 }
 
 .bg-yellow-sopla {
@@ -29,4 +31,16 @@
 
 .yellow-shadow-card {
   box-shadow: 0px 10px 15px -3px var(--yellow-shadow-sopla);
+}
+
+.bg-input-sopla {
+  background-color: var(--input-sopla);
+}
+
+.input-text-color {
+  color: var(--input-placeholder-sopla);
+}
+
+.border-input-sopla {
+  border-color: var(--yellow-shadow-sopla);
 }
