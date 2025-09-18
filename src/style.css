@@ -9,6 +9,10 @@
   --input-placeholder-sopla: #F1E69680;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bg-yellow-sopla {
   background-color: var(--yellow-sopla);
 }
