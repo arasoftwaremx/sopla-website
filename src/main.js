@@ -1,6 +1,23 @@
 import './style.css'
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    document.getElementById('form').addEventListener('submit', function (e) {
+        e.preventDefault()
+
+
+        const serviceID = 'default_service';
+        const templateID = 'template_ra2s6gp';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                console.log('Correo enviado exitosamente')
+            }, (error) => {
+
+            })
+    })
+
+
     const menuButton = document.getElementById('menu-button');
     const closeMenuButton = document.getElementById('close-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');

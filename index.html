@@ -373,39 +373,39 @@
                     Contáctanos
                 </h1>
 
-                <form class="space-y-6 max-w-xl mx-auto w-full">
+                <form action="#" class="space-y-6 max-w-xl mx-auto w-full" id="form">
                     <div>
-                        <input type="text" placeholder="Nombre completo"
+                        <input type="text" placeholder="Nombre completo" name="name"
                             class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
                             required />
                     </div>
 
                     <div>
-                        <input type="email" placeholder="Correo electrónico"
+                        <input type="email" placeholder="Correo electrónico" name="email"
                             class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
                             required />
                     </div>
 
                     <div>
-                        <input type="tel" placeholder="Teléfono"
+                        <input type="tel" placeholder="Teléfono" name="tel"
                             class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
                             required />
                     </div>
 
                     <div>
-                        <input type="text" placeholder="Dirección"
+                        <input type="text" placeholder="Dirección" name="address"
                             class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
                             required />
                     </div>
 
                     <div>
-                        <textarea placeholder="Cuéntanos tu problema..." rows="4"
+                        <textarea placeholder="Cuéntanos tu problema..." rows="4" name="content"
                             class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla resize-none"
                             required></textarea>
                     </div>
 
-                    <button type="submit"
-                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <button type="submit" id="btn-save"
+                        class="w-full bg-green-500 hover:bg-green-600 cursor-pointer text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Enviar
                     </button>
                 </form>
@@ -539,6 +539,10 @@
 
 
     <script type="module" src="/src/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('iluFgLv91iwC-YqSo')
+    </script>
 </body>
 
 </html>
