@@ -38,7 +38,7 @@
             <div class="w-30">
                 <img class="h-full w-full object-contain" src="./src/images/soplalogo.webp" alt="Logo">
             </div>
-            <div class="hidden lg:flex flex-grow items-center justify-center">
+            <div class="hidden md:flex flex-grow items-center justify-center">
                 <ul class="flex flex-row space-x-15 font-semibold">
                     <li>
                         <a href="#inicio">INICIO</a>
@@ -49,12 +49,12 @@
                     <li><a href="#control_plagas">CONTROL PLAGAS</a></li>
                 </ul>
             </div>
-            <div class="hidden lg:flex">
+            <div class="hidden md:flex">
                 <a class="text-green-sopla p-3 rounded-full bg-green-sopla font-semibold" href="#contacto">
                     <span class="text-white">CONTACTO</span>
                 </a>
             </div>
-            <div class="lg:hidden">
+            <div class="md:hidden">
                 <button id="menu-button" class="text-green-sopla focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -65,10 +65,11 @@
                 </button>
             </div>
         </nav>
+
         <!-- Off-canvas menu -->
         <div id="mobile-menu"
-            class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden">
-            <div class="p-6">
+            class="ps-1 fixed top-0 left-0 h-full w-72 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+            <div class="p-6 space-y-8">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold text-green-sopla">Menú</h2>
                     <button id="close-menu-button" class="text-green-sopla focus:outline-none">
@@ -79,7 +80,7 @@
                         </svg>
                     </button>
                 </div>
-                <ul class="flex flex-col space-y-4 font-semibold text-green-sopla">
+                <ul class="flex flex-col space-y-2 text-green-sopla font-normal">
                     <li>
                         <a href="#inicio" class="block py-2">INICIO</a>
                     </li>
@@ -90,6 +91,44 @@
                         <a href="#control_plagas" class="block py-2">CONTROL PLAGAS</a>
                     </li>
                 </ul>
+                <div class="flex-1">
+                    <h2 class="text-lg font-bold text-green-sopla mb-6">Horarios</h2>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="flex justify-between items-center border-b-1 border-dotted pb-3">
+                            <span class="font-semibold text-gray-700">Lunes - Viernes</span>
+                            <span class="text-gray-600">9:00 AM - 5:00 PM</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-b-1 border-dotted pb-3">
+                            <span class="font-semibold text-gray-700">Sábado</span>
+                            <span class="text-gray-600">9:00 AM - 2:00 PM</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-b-1 border-dotted pb-3">
+                            <span class="font-semibold text-gray-700">Domingo</span>
+                            <span class="text-gray-600">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-lg font-bold text-green-sopla mb-6">Redes Sociales</h2>
+
+                    <div class="flex justify-center gap-10">
+                        <a href="https://www.tiktok.com/@solucionesenplagas"
+                            class="text-yellow-sopla hover:text-yellow-600 transition-colors transform hover:scale-110" target="_blank">
+                            <i class="fab fa-tiktok text-3xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100093832496592"
+                            class="text-yellow-sopla hover:text-yellow-600 transition-colors transform hover:scale-110" target="_blank">
+                            <i class="fab fa-facebook text-3xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sopla_2/"
+                            class="text-yellow-sopla hover:text-yellow-600 transition-colors transform hover:scale-110" target="_blank">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
                 <div class="mt-6">
                     <a class="text-white bg-green-sopla p-3 rounded-full font-semibold block text-center"
                         href="#contacto">
@@ -98,6 +137,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Overlay -->
         <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 hidden lg:hidden"></div>
         <video class="inset-0 scale-110 absolute object-center w-full h-full object-cover z-10"
@@ -472,7 +512,7 @@
 
     <!-- Footer -->
     <footer class="p-5 sm:p-8 lg:flex lg:items-stretch lg:p-10">
-        <div class="flex-1 border-b-2 border-dotted mb-2 lg:mb-0 lg:border-b-0 lg:border-e-2">
+        <div class="flex-1 border-b-2 border-dashed border-gray-400/40 mb-2 lg:mb-0 lg:border-b-0 lg:border-e-2">
             <div class="p-5 flex flex-col justify-between h-full">
                 <ul
                     class="flex flex-row justify-center lg:justify-normal gap-4 sm:gap-20 lg:gap-10 text-yellow-sopla font-bold text-base">
@@ -491,11 +531,11 @@
         </div>
 
         <div class="flex-1 lg:ps-16">
-            <div class="border-b-2 border-dotted text-center">
+            <div class="border-b-2 border-dashed border-gray-400/40 text-center">
                 <h1 class="text-green-sopla text-xl= font-bold lg:text-start lg:text-xl mt-5">Redes Sociales</h1>
 
                 <div class="grid grid-cols-2 gap-x-5 gap-y-7 my-10">
-                    <a href="" class="flex items-center justify-center gap-2">
+                    <a href="https://www.facebook.com/profile.php?id=100093832496592" class="flex items-center justify-center gap-2" target="_blank">
                         <i class="fab fa-square-facebook text-yellow-sopla text-2xl"></i>
                         <span class="text-sm lg:text-lg">SOPLA</span>
                     </a>
@@ -505,12 +545,12 @@
                         <span class="text-sm lg:text-lg">871-785-0170</span>
                     </p>
 
-                    <a href="https://www.instagram.com/sopla_2/" class="flex items-center justify-center gap-2">
+                    <a href="https://www.instagram.com/sopla_2/" class="flex items-center justify-center gap-2" target="_blank">
                         <i class="fab fa-square-instagram text-yellow-sopla text-2xl"></i>
                         <span class="text-sm lg:text-lg">sopla_2</span>
                     </a>
 
-                    <a href="https://www.tiktok.com/@solucionesenplagas" class="flex items-center justify-center gap-2">
+                    <a href="https://www.tiktok.com/@solucionesenplagas" class="flex items-center justify-center gap-2" target="_blank">
                         <i class="fab fa-tiktok text-yellow-sopla text-2xl"></i>
                         <span class="text-sm lg:text-lg">solucionesenplagas</span>
                     </a>
