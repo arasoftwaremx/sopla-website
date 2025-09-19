@@ -83,25 +83,41 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         submitButton.classList.add('opacity-75', 'cursor-not-allowed');
 
-        const serviceID = 'default_service';
-        const templateID = 'template_ra2s6gp';
+        const formData = new FormData(this);
 
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
+        fetch(this.action, {
+            method: this.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
                 showToast('Correo enviado exitosamente', 'success');
                 this.reset();
                 lastSubmissionTime = currentTime;
-            }, (error) => {
-                showToast('Error al enviar el correo. Por favor, inténtalo de nuevo.', 'error');
-                console.error('Error:', error);
-            })
-            .finally(() => {
-                // Restaurar botón
-                isSubmitting = false;
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Enviar';
-                submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
-            });
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwnProperty.call(data, 'errors')) {
+                        showToast(data.errors.map(error => error.message).join(', '), 'error');
+                    } else {
+                        showToast('Error al enviar el correo. Por favor, inténtalo de nuevo.', 'error');
+                    }
+                });
+            }
+        })
+        .catch((error) => {
+            showToast('Error al enviar el correo. Por favor, inténtalo de nuevo.', 'error');
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            // Restaurar botón
+            isSubmitting = false;
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Enviar';
+            submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
+        });
     })
 
 
