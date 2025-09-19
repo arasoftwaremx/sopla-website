@@ -1,6 +1,8 @@
 import './style.css'
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Update current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
     function showToast(message, type = 'success') {
         const toastContainer = document.getElementById('toast-container');

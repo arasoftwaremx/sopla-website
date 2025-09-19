@@ -167,10 +167,12 @@
                         capacitado!</p>
                 </div>
                 <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a class="bg-transparent border-2 border-white px-8 py-3 rounded-full" href="servicios">
+                    <a class="bg-transparent border-2 border-white px-8 py-3 rounded-full text-white hover:bg-white hover:text-green-600 transform hover:scale-105 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-white/30"
+                        href="#contacto">
                         <span>Agendar Cita</span>
                     </a>
-                    <a class="bg-green-sopla border-2 border-green-sopla px-8 py-3 rounded-full" href="servicios">
+                    <a class="bg-green-sopla border-2 border-green-sopla px-8 py-3 rounded-full hover:bg-transparent hover:text-white hover:border-white transform hover:scale-105 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-green-sopla/30"
+                        href="#servicios">
                         Servicios
                     </a>
                 </div>
@@ -435,7 +437,7 @@
         <section id="contacto" class="min-h-screen">
             <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
                 <!-- Left-->
-                <div class="bg-white p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
+                <div class="bg-green-50/45 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
                     <h1
                         class="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-600 mb-10 text-center border-b-2 border-input-sopla pb-4">
                         Contáctanos
@@ -558,7 +560,8 @@
                         <img src="./src/images/logo_sopla.webp" alt="logo_sopla" class="mx-auto lg:mx-0">
                     </div>
 
-                    <p class="text-sm text-center lg:text-start">&copy; 2025 Sopla, Todos los derechos reservados.</p>
+                    <p class="text-sm text-center lg:text-start">&copy; <span id="current-year"></span> Sopla, Todos los
+                        derechos reservados.</p>
                 </div>
             </div>
 
@@ -568,25 +571,34 @@
 
                     <div class="grid grid-cols-2 gap-x-5 gap-y-7 my-10">
                         <a href="https://www.facebook.com/profile.php?id=100093832496592"
-                            class="flex items-center justify-center gap-2" target="_blank">
-                            <i class="fab fa-square-facebook text-yellow-sopla text-2xl"></i>
+                            class="flex items-center justify-center gap-2 hover:text-blue-600 transform hover:scale-105 transition-all duration-300 ease-out"
+                            target="_blank">
+                            <i
+                                class="fab fa-square-facebook text-yellow-sopla hover:text-blue-600 text-2xl transition-colors duration-300"></i>
                             <span class="text-sm lg:text-lg">SOPLA</span>
                         </a>
 
-                        <p class="flex items-center justify-center gap-2">
-                            <i class="fab fa-square-whatsapp text-yellow-sopla text-2xl"></i>
+                        <a href="https://wa.me/+528717850170?text=Hola%21%20Quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 hover:text-green-600 transform hover:scale-105 transition-all duration-300 ease-out">
+                            <i
+                                class="fab fa-square-whatsapp text-yellow-sopla hover:text-green-600 text-2xl transition-colors duration-300"></i>
                             <span class="text-sm lg:text-lg">871-785-0170</span>
-                        </p>
+                        </a>
 
-                        <a href="https://www.instagram.com/sopla_2/" class="flex items-center justify-center gap-2"
+                        <a href="https://www.instagram.com/sopla_2/"
+                            class="flex items-center justify-center gap-2 hover:text-pink-600 transform hover:scale-105 transition-all duration-300 ease-out"
                             target="_blank">
-                            <i class="fab fa-square-instagram text-yellow-sopla text-2xl"></i>
+                            <i
+                                class="fab fa-square-instagram text-yellow-sopla hover:text-pink-600 text-2xl transition-colors duration-300"></i>
                             <span class="text-sm lg:text-lg">sopla_2</span>
                         </a>
 
                         <a href="https://www.tiktok.com/@solucionesenplagas"
-                            class="flex items-center justify-center gap-2" target="_blank">
-                            <i class="fab fa-tiktok text-yellow-sopla text-2xl"></i>
+                            class="flex items-center justify-center gap-2 hover:text-black transform hover:scale-105 transition-all duration-300 ease-out"
+                            target="_blank">
+                            <i
+                                class="fab fa-tiktok text-yellow-sopla hover:text-black text-2xl transition-colors duration-300"></i>
                             <span class="text-sm lg:text-lg">solucionesenplagas</span>
                         </a>
                     </div>
@@ -596,15 +608,20 @@
                     <h1 class="text-green-sopla font-bold text-xl lg:text-start lg:text-xl">Contáctanos</h1>
 
                     <div class="lg:flex lg:flex-row lg:justify-around lg:mt-10 space-y-5 lg:space-y-0 lg:text-xl">
-                        <p class="mt-5 lg:mt-0 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-envelope text-yellow-sopla text-2xl"></i>
+                        <a href="mailto:carlos_sopla1@hotmail.com"
+                            class="mt-5 lg:mt-0 flex items-center justify-center gap-2 hover:text-blue-600 transform hover:scale-105 transition-all duration-300 ease-out">
+                            <i
+                                class="fa-solid fa-envelope text-yellow-sopla hover:text-blue-600 text-2xl transition-colors duration-300"></i>
                             <span class="text-sm lg:text-lg">carlos_sopla1@hotmail.com</span>
-                        </p>
+                        </a>
 
-                        <p class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-phone text-yellow-sopla text-2xl"></i>
+                        <a href="https://wa.me/+528717850170?text=Hola%21%20Quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 hover:text-green-600 transform hover:scale-105 transition-all duration-300 ease-out">
+                            <i
+                                class="fa-solid fa-phone text-yellow-sopla hover:text-green-600 text-2xl transition-colors duration-300"></i>
                             <span class="text-sm lg:text-lg">+52 871-785-0170</span>
-                        </p>
+                        </a>
                     </div>
                 </div>
             </div>
