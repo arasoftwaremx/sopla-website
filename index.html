@@ -1,13 +1,634 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
-    </head>
-    <body>
-        <div id="app"></div>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/sopla.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="SOPLA - Soluciones profesionales en control de plagas. Especialistas en fumigación, desinfección y control integral de plagas con servicios seguros y efectivos." />
+    <meta name="keywords"
+        content="control de plagas, fumigación, desinfección, plagas, exterminación, servicios profesionales, SOPLA" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="SOPLA" />
+    <meta name="language" content="es" />
+    <meta property="og:title" content="SOPLA - Soluciones Profesionales en Control de Plagas" />
+    <meta property="og:description"
+        content="Especialistas en fumigación, desinfección y control integral de plagas con servicios seguros y efectivos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOPLA - Soluciones en Control de Plagas" />
+    <meta name="twitter:description" content="Servicios profesionales de fumigación y control de plagas." />
+    <title>SOPLA - Soluciones Profesionales en Control de Plagas</title>
+</head>
+
+<body>
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-5 right-5 z-[9999] space-y-3"></div>
+
+    <a class="fixed z-50 bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white rounded-full text-3xl w-16 h-16 flex items-center justify-center"
+        href="https://wa.me/+528717850170?text=Hola%21%20Quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+        target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.05em" height="1.2em" viewBox="0 0 448 512">
+            <path fill="#fff"
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222c0-59.3-25.2-115-67.1-157m-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4l-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2c0-101.7 82.8-184.5 184.6-184.5c49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6m101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18c-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4c-32.6-16.3-54-29.1-75.5-66c-5.7-9.8 5.7-9.1 16.3-30.3c1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5c-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8c35.2 15.2 49 16.5 66.6 13.9c10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6" />
+        </svg>
+    </a>
+    <div class="relative overflow-hidden flex flex-col min-h-screen" id="inicio">
+        <nav
+            class="z-40 flex-none bg-white p-6 shadow-md rounded-2xl m-5 flex flex-row items-center justify-between text-green-sopla">
+            <div class="w-30">
+                <img class="h-full w-full object-contain" src="./src/images/soplalogo.webp" alt="Logo">
+            </div>
+            <div class="hidden md:flex flex-grow items-center justify-center">
+                <ul class="flex flex-row space-x-15 font-semibold">
+                    <li>
+                        <a href="#inicio">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#servicios">SERVICIOS</a>
+                    </li>
+                    <li><a href="#control_plagas">CONTROL PLAGAS</a></li>
+                </ul>
+            </div>
+            <div class="hidden md:flex">
+                <a class="text-green-sopla p-3 rounded-full bg-green-sopla font-semibold" href="#contacto">
+                    <span class="text-white">CONTACTO</span>
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-green-sopla focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Off-canvas menu -->
+        <div id="mobile-menu"
+            class="ps-1 fixed top-0 left-0 h-full w-72 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+            <div class="p-6 space-y-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-green-sopla">Menú</h2>
+                    <button id="close-menu-button" class="text-green-sopla focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="flex flex-col space-y-2 text-green-sopla font-normal">
+                    <li>
+                        <a href="#inicio" class="block py-2">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#servicios" class="block py-2">SERVICIOS</a>
+                    </li>
+                    <li>
+                        <a href="#control_plagas" class="block py-2">CONTROL PLAGAS</a>
+                    </li>
+                </ul>
+                <div class="flex-1">
+                    <h2 class="text-lg font-bold text-green-sopla mb-6">Horarios</h2>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="flex justify-between items-center border-b-1 border-dotted pb-3">
+                            <span class="font-semibold text-gray-700">Lunes - Viernes</span>
+                            <span class="text-gray-600">9:00 AM - 5:00 PM</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-b-1 border-dotted pb-3">
+                            <span class="font-semibold text-gray-700">Sábado</span>
+                            <span class="text-gray-600">9:00 AM - 2:00 PM</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-b-1 border-dotted pb-3">
+                            <span class="font-semibold text-gray-700">Domingo</span>
+                            <span class="text-gray-600">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-lg font-bold text-green-sopla mb-6">Redes Sociales</h2>
+
+                    <div class="flex justify-center gap-10">
+                        <a href="https://www.tiktok.com/@solucionesenplagas"
+                            class="text-yellow-sopla hover:text-yellow-600 transition-colors transform hover:scale-110"
+                            target="_blank">
+                            <i class="fab fa-tiktok text-3xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100093832496592"
+                            class="text-yellow-sopla hover:text-yellow-600 transition-colors transform hover:scale-110"
+                            target="_blank">
+                            <i class="fab fa-facebook text-3xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sopla_2/"
+                            class="text-yellow-sopla hover:text-yellow-600 transition-colors transform hover:scale-110"
+                            target="_blank">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <a class="text-white bg-green-sopla p-3 rounded-full font-semibold block text-center"
+                        href="#contacto">
+                        CONTACTO
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 hidden lg:hidden"></div>
+        <video class="inset-0 scale-110 absolute object-center w-full h-full object-cover z-10"
+            src="./src/videos/sopla_general.mp4" autoplay loop muted playsinline>
+            <img src="./src/images/poster.webp" alt="Video no soportado">
+            Su navegador no soporta contenido multimedia.
+        </video>
+        <div class="absolute bg-black/40 z-20 inset-0"></div>
+        <div class="absolute inset-0 text-white flex items-center justify-center z-20">
+            <div class="m-5 text-center space-y-6 md:space-y-10 lg:space-y-15">
+                <div class="space-y-6">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold"><span
+                            class="text-green-sopla">Soluciones</span> en plagas</h2>
+                    <div class="border-2 w-32 md:w-40 lg:w-50 text-amber-300 rounded-full mx-auto"></div>
+                </div>
+                <div>
+                    <p class="font-light text-lg md:text-xl lg:text-2xl">¡Ofrecemos servicios seguros, eficientes y de
+                        calidad <br> con
+                        personal
+                        altamente
+                        capacitado!</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a class="bg-transparent border-2 border-white px-8 py-3 rounded-full text-white hover:bg-white hover:text-green-600 transform hover:scale-105 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-white/30"
+                        href="#contacto">
+                        <span>Agendar Cita</span>
+                    </a>
+                    <a class="bg-green-sopla border-2 border-green-sopla px-8 py-3 rounded-full hover:bg-transparent hover:text-white hover:border-white transform hover:scale-105 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-green-sopla/30"
+                        href="#servicios">
+                        Servicios
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Our servicios Section-->
+    <section id="servicios" class="p-7 sm:p-8 lg:p-15">
+        <div>
+            <h3 class="text-xl text-yellow-sopla">Fumigación Profesional</h3>
+
+            <h1 class="text-3xl lg:text-4xl text-green-sopla font-black">Nuestros Servicios</h1>
+
+            <div class="w-[125px] h-[5px] bg-yellow-sopla mt-5"></div>
+
+            <!-- Video Container -->
+            <div class="mt-10 relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/BID_m-Vv0nw"
+                    title="Sopla"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+        <!-- Info -->
+        <div class="mt-10 md:flex md:gap-6 lg:mt-15">
+            <div class="mt-5 sm:mt-8 lg:mt-0 sm:flex-1">
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/control_mosca.webp" alt="Desinfección" loading="lazy">
+
+                    <div
+                        class="bg-white absolute w-12 h-12 sm:h-20 sm:w-20 bottom-7 end-4 flex items-center justify-center rounded-full text-green-sopla text-xl shadow-lg">
+                        <i class="fa-solid fa-bug"></i>
+                    </div>
+                </div>
+
+                <h2 class="text-green-sopla font-bold mt-4 lg:mt-10 text-2xl">Control de Moscas</h2>
+
+                <p class="mt-2 sm:mt-3 md:mt-4 lg:mt-5">Ofrecemos un servicio profesional de control de moscas, rápido y
+                    seguro, para mantener tus espacios limpios, saludables y libres de plagas.</p>
+            </div>
+
+            <div class="mt-5 sm:mt-8 lg:mt-0 sm:flex-1">
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/desinfeccion.webp" alt="Desinfección" loading="lazy">
+
+                    <div
+                        class="bg-white absolute w-12 h-12 sm:h-20 sm:w-20 bottom-7 end-4 flex items-center justify-center rounded-full text-green-sopla text-xl shadow-lg">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <h2 class="text-green-sopla font-bold mt-4 lg:mt-10 text-2xl">Desinfección</h2>
+
+                <p class="mt-2 sm:mt-3 md:mt-4 lg:mt-5">Exterminamos virus, bacterias y microorganismos letales que
+                    amenazan tu salud y
+                    bienestar.</p>
+            </div>
+
+            <div class="mt-5 sm:mt-8 lg:mt-0 sm:flex-1">
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/control_plaga.webp" alt="Desinfección" loading="lazy">
+
+                    <div
+                        class="bg-white absolute w-12 h-12 sm:h-20 sm:w-20 bottom-7 end-4 flex items-center justify-center rounded-full text-green-sopla text-xl shadow-lg">
+                        <img src="./src/images/lucide_rat.webp" class="w-8 h-8 sm:w-10 sm:h-10" alt="icon_desinfeccion"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <h2 class="text-green-sopla font-bold mt-4 lg:mt-10 text-2xl">Control de Roedores</h2>
+
+                <p class="mt-2 sm:mt-3 md:mt-4 lg:mt-5">Controlamos roedores y plagas dañinas garantizando espacios
+                    libres
+                    de infestaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Control Plagas-->
+    <section class="pt-2 lg:pt-0">
+        <section class="p-8 lg:p-15" id="control_plagas">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
+                <div>
+                    <h3 class="text-xl text-yellow-sopla">
+                        Brindamos seguridad a tu negocio</h3>
+                    <h2 class="text-3xl lg:text-4xl text-green-sopla font-black">Control
+                        de Plagas</h2>
+                    <div class="w-[125px] h-[5px] bg-yellow-sopla mt-5"></div>
+                </div>
+                <div
+                    class="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-6 lg:py-5 xl:px-8 xl:py-6 rounded-full bg-yellow-sopla text-white shadow-md shadow-yellow-100 whitespace-nowrap">
+                    <span class="font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">Somos tu mejor
+                        opción</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/comercio.webp" alt="Comercio">
+                    <div
+                        class="absolute inset-0 bg-black/20 rounded-2xl group-hover:inset-shadow-sm group-hover:inset-shadow-amber-200 duration-500 transition-all ease-out">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6">
+                        <div class="group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                            <p class="text-white font-light">Protege la reputación e inversión de tu negocio con un
+                                control
+                                de plagas eficaz.</p>
+                        </div>
+                        <div
+                            class="rounded-full p-2 backdrop-blur-lg backdrop-brightness-125 w-fit group-hover:scale-105 group-hover:translate-y-1 transition-all duration-400 ease-out">
+                            <span class="text-white font-bold">Comercio</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/casa-habitacion.webp" alt="Casa Habitación">
+                    <div
+                        class="absolute inset-0 bg-black/20 rounded-2xl group-hover:inset-shadow-sm group-hover:inset-shadow-amber-200 duration-500 transition-all ease-out">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6">
+                        <div class="group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                            <p class="text-white font-light">Dale a tu familia la tranquilidad que se merece, con un
+                                hogar
+                                libre de plagas.</p>
+                        </div>
+                        <div
+                            class="rounded-full p-2 backdrop-blur-lg backdrop-brightness-125 w-fit group-hover:scale-105 group-hover:translate-y-1 transition-all duration-400 ease-out">
+                            <span class="text-white font-bold">Casa Habitación</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/oficinas.webp" alt="Oficinas">
+                    <div
+                        class="absolute inset-0 bg-black/20 rounded-2xl group-hover:inset-shadow-sm group-hover:inset-shadow-amber-200 duration-500 transition-all ease-out">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6">
+                        <div class="group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                            <p class="text-white font-light">Mantén un ambiente de trabajo saludable.</p>
+                        </div>
+                        <div
+                            class="rounded-full p-2 backdrop-blur-lg backdrop-brightness-125 w-fit group-hover:scale-105 group-hover:translate-y-1 transition-all duration-400 ease-out">
+                            <span class="text-white font-bold">Oficinas</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/transportes.webp" alt="Transportes">
+                    <div
+                        class="absolute inset-0 bg-black/20 rounded-2xl group-hover:inset-shadow-sm group-hover:inset-shadow-amber-200 duration-500 transition-all ease-out">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6">
+                        <div class="group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                            <p class="text-white font-light">Protege tu mercancía y tus vehículos en cada viaje.</p>
+                        </div>
+                        <div
+                            class="rounded-full p-2 backdrop-blur-lg backdrop-brightness-125 w-fit group-hover:scale-105 group-hover:translate-y-1 transition-all duration-400 ease-out">
+                            <span class="text-white font-bold">Transportes</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/establos.webp" alt="Establos">
+                    <div
+                        class="absolute inset-0 bg-black/20 rounded-2xl group-hover:inset-shadow-sm group-hover:inset-shadow-amber-200 duration-500 transition-all ease-out">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6">
+                        <div class="group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                            <p class="text-white font-light">Garantiza la salud del ganado y cumple estándares
+                                veterinarios.
+                                Protege tu inversión y calidad.</p>
+                        </div>
+                        <div
+                            class="rounded-full p-2 backdrop-blur-lg backdrop-brightness-125 w-fit group-hover:scale-105 group-hover:translate-y-1 transition-all duration-400 ease-out">
+                            <span class="text-white font-bold">Establos</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-amber-200 shadow-amber-100 transition-shadow duration-500 ease-out h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+                    <img class="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all ease-out duration-700"
+                        src="./src/images/restaurante.webp" alt="Restaurante">
+                    <div
+                        class="absolute inset-0 bg-black/20 rounded-2xl group-hover:inset-shadow-sm group-hover:inset-shadow-amber-200 duration-500 transition-all ease-out">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6">
+                        <div class="group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                            <p class="text-white font-light">Cumple las normativas sanitarias y protege tu reputación.
+                            </p>
+                        </div>
+                        <div
+                            class="rounded-full p-2 backdrop-blur-lg backdrop-brightness-125 w-fit group-hover:scale-105 group-hover:translate-y-1 transition-all duration-400 ease-out">
+                            <span class="text-white font-bold">Restaurantes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empresa avalada por COFEPRIS-->
+            <div class="mt-10">
+                <div
+                    class="relative group rounded-2xl h-full w-full overflow-hidden hover:shadow-xl hover:shadow-green-sopla/20 shadow-lg shadow-amber-100 transition-all duration-500 ease-out hover:scale-[1.02] transform-gpu">
+                    <img class="absolute inset-0 h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
+                        src="./src/images/empresa_avalada.webp" alt="Empresa Avalada">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-70% md:from-0% from-[var(--green-sopla)] to-transparent group-hover:from-75% md:group-hover:from-10% transition-all duration-500 ease-out">
+                    </div>
+                    <div class="relative grid grid-rows-2 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+                        <div
+                            class="font-extrabold flex items-center md:items-start justify-center md:justify-start text-lg sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-wrap group-hover:-translate-y-1 transition-transform duration-400 ease-out">
+                            <div class="text-center md:text-start">
+                                <span class="text-white group-hover:drop-shadow-lg transition-all duration-300">SOMOS
+                                    UNA
+                                    EMPRESA AVALADA POR</span><span
+                                    class="text-yellow-sopla group-hover:drop-shadow-lg transition-all duration-300">
+                                    COFEPRIS</span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row sm:items-center md:items-end justify-between text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl gap-4 sm:gap-6 md:gap-8">
+                            <div
+                                class="font-bold text-center md:text-start group-hover:translate-x-1 transition-transform duration-400 ease-out">
+                                <h3 class="text-white group-hover:drop-shadow-md transition-all duration-300">COMISIÓN
+                                    FEDERAL PARA LA PROTECCIÓN</h3>
+                                <h3 class="text-yellow-sopla group-hover:drop-shadow-md transition-all duration-300">
+                                    CONTRA
+                                    RIESGOS SANITARIOS</h3>
+                            </div>
+                            <div
+                                class="bg-white h-24 sm:h-28 md:h-30 lg:h-32 xl:h-36 sm:w-full md:w-80 lg:w-96 xl:w-[400px] rounded-2xl group-hover:scale-105 group-hover:shadow-lg transition-all duration-400 ease-out">
+                                <img class="w-full h-full object-cover rounded-2xl" src="./src/images/cofepris.webp"
+                                    alt="COFEPRIS">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Contact -->
+        <section id="contacto" class="min-h-screen">
+            <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+                <!-- Left-->
+                <div class="bg-green-50/45 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
+                    <h1
+                        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-600 mb-10 text-center border-b-2 border-input-sopla pb-4">
+                        Contáctanos
+                    </h1>
+
+                    <form action="https://usebasin.com/f/b16087cf3c82" method="POST"
+                        class="space-y-6 max-w-xl mx-auto w-full" id="form">
+                        <div>
+                            <input type="text" placeholder="Nombre completo" name="name" maxlength="100"
+                                class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                                required />
+                        </div>
+
+                        <div>
+                            <input type="email" placeholder="Correo electrónico" name="email" maxlength="100"
+                                class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                                required />
+                        </div>
+
+                        <div>
+                            <input type="tel" placeholder="Teléfono" name="tel" maxlength="10"
+                                class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                                required />
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Dirección" name="address" maxlength="255"
+                                class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla"
+                                required />
+                        </div>
+
+                        <div>
+                            <textarea placeholder="Cuéntanos tu problema..." rows="4" name="content"
+                                class="w-full px-4 py-3 bg-input-sopla rounded-xl border-b-2 border-input-sopla focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-700 placeholder-input-text-sopla resize-none"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" id="btn-save"
+                            class="w-full bg-green-500 hover:bg-green-600 cursor-pointer text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Enviar
+                        </button>
+                    </form>
+
+                    <div class="mt-12 max-w-xl mx-auto w-full">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <h2 class="text-2xl font-bold text-green-600 mb-6">Horarios</h2>
+
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center pr-4 border-b-1 border-dotted pb-3">
+                                        <span class="font-semibold text-gray-700">Lunes a Viernes</span>
+                                        <span class="text-gray-600">9:00 AM - 5:00 PM</span>
+                                    </div>
+
+                                    <div class="flex justify-between items-center pr-4 border-b-1 border-dotted pb-3">
+                                        <span class="font-semibold text-gray-700">Sábados</span>
+                                        <span class="text-gray-600">9:00 AM - 2:00 PM</span>
+                                    </div>
+
+                                    <div class="flex justify-between items-center pr-4 border-b-1 border-dotted pb-3">
+                                        <span class="font-semibold text-gray-700">Domingos</span>
+                                        <span class="text-gray-600">Cerrado</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 ml-8">
+                                <a href="#"
+                                    class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                    <i class="fab fa-whatsapp text-3xl"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@solucionesenplagas"
+                                    class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                    <i class="fab fa-tiktok text-3xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                    <i class="fab fa-facebook text-3xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/sopla_2/"
+                                    class="text-yellow-500 hover:text-yellow-600 transition-colors transform hover:scale-110">
+                                    <i class="fab fa-instagram text-3xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right -->
+                <div
+                    class="relative min-h-[400px] lg:min-h-full bg-[url('/src/images/sopla_contacto.jpg')] bg-cover bg-center">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+
+                    <div
+                        class="relative h-full flex flex-col justify-center p-8 sm:p-12 lg:p-16 xl:p-20 text-white text-center">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                            Háblanos de tu<br />situación
+                        </h2>
+                        <p class="text-lg sm:text-xl lg:text-2xl font-light">
+                            Programa tu tratamiento<br />personalizado
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="p-5 sm:p-8 lg:flex lg:items-stretch lg:p-10">
+            <div class="flex-1 border-b-2 border-dashed border-gray-400/40 mb-2 lg:mb-0 lg:border-b-0 lg:border-e-2">
+                <div class="p-5 flex flex-col justify-between h-full">
+                    <ul
+                        class="flex flex-row justify-center lg:justify-normal gap-4 sm:gap-20 lg:gap-10 text-yellow-sopla font-bold text-base">
+                        <li class="cursor-pointer"><a href="#inicio">Inicio</a></li>
+                        <li class="cursor-pointer"><a href="#servicios">Servicios</a></li>
+                        <li class="cursor-pointer"><a href="#control_plagas">Control</a></li>
+                        <li class="cursor-pointer"><a href="#contacto">Contacto</a></li>
+                    </ul>
+
+                    <div class="my-5 m-0 lg:me-20">
+                        <img src="./src/images/logo_sopla.webp" alt="logo_sopla" class="mx-auto lg:mx-0">
+                    </div>
+
+                    <p class="text-sm text-center lg:text-start">&copy; <span id="current-year"></span> Sopla, Todos los
+                        derechos reservados.</p>
+                </div>
+            </div>
+
+            <div class="flex-1 lg:ps-16">
+                <div class="border-b-2 border-dashed border-gray-400/40 text-center">
+                    <h1 class="text-green-sopla text-xl= font-bold lg:text-start lg:text-xl mt-5">Redes Sociales</h1>
+
+                    <div class="grid grid-cols-2 gap-x-5 gap-y-7 my-10">
+                        <a href="https://www.facebook.com/profile.php?id=100093832496592"
+                            class="flex items-center justify-center gap-2 hover:text-blue-600 transform hover:scale-105 transition-all duration-300 ease-out"
+                            target="_blank">
+                            <i
+                                class="fab fa-square-facebook text-yellow-sopla hover:text-blue-600 text-2xl transition-colors duration-300"></i>
+                            <span class="text-sm lg:text-lg">SOPLA</span>
+                        </a>
+
+                        <a href="https://wa.me/+528717850170?text=Hola%21%20Quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 hover:text-green-600 transform hover:scale-105 transition-all duration-300 ease-out">
+                            <i
+                                class="fab fa-square-whatsapp text-yellow-sopla hover:text-green-600 text-2xl transition-colors duration-300"></i>
+                            <span class="text-sm lg:text-lg">871-785-0170</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/sopla_2/"
+                            class="flex items-center justify-center gap-2 hover:text-pink-600 transform hover:scale-105 transition-all duration-300 ease-out"
+                            target="_blank">
+                            <i
+                                class="fab fa-square-instagram text-yellow-sopla hover:text-pink-600 text-2xl transition-colors duration-300"></i>
+                            <span class="text-sm lg:text-lg">sopla_2</span>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@solucionesenplagas"
+                            class="flex items-center justify-center gap-2 hover:text-black transform hover:scale-105 transition-all duration-300 ease-out"
+                            target="_blank">
+                            <i
+                                class="fab fa-tiktok text-yellow-sopla hover:text-black text-2xl transition-colors duration-300"></i>
+                            <span class="text-sm lg:text-lg">solucionesenplagas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="my-5 text-center">
+                    <h1 class="text-green-sopla font-bold text-xl lg:text-start lg:text-xl">Contáctanos</h1>
+
+                    <div class="lg:flex lg:flex-row lg:justify-around lg:mt-10 space-y-5 lg:space-y-0 lg:text-xl">
+                        <a href="mailto:carlos_sopla1@hotmail.com"
+                            class="mt-5 lg:mt-0 flex items-center justify-center gap-2 hover:text-blue-600 transform hover:scale-105 transition-all duration-300 ease-out">
+                            <i
+                                class="fa-solid fa-envelope text-yellow-sopla hover:text-blue-600 text-2xl transition-colors duration-300"></i>
+                            <span class="text-sm lg:text-lg">carlos_sopla1@hotmail.com</span>
+                        </a>
+
+                        <a href="https://wa.me/+528717850170?text=Hola%21%20Quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 hover:text-green-600 transform hover:scale-105 transition-all duration-300 ease-out">
+                            <i
+                                class="fa-solid fa-phone text-yellow-sopla hover:text-green-600 text-2xl transition-colors duration-300"></i>
+                            <span class="text-sm lg:text-lg">+52 871-785-0170</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
         <script type="module" src="/src/main.js"></script>
-    </body>
+</body>
+
 </html>
